@@ -1,0 +1,1051 @@
+/* 全局主题样式 */
+
+/* 浅色主题 - 暖色调设计 */
+.light-mode {
+  --el-bg-color: #fefaf6;
+  --el-text-color-primary: #2c1810;
+  --el-text-color-regular: #4a3528;
+  --el-text-color-secondary: #6b4f3a;
+  --el-border-color: #f0e6dc;
+  --el-border-color-light: #f5ede5;
+  --el-border-color-lighter: #faf4ef;
+  --el-fill-color: #f9f3ee;
+  --el-fill-color-light: #fcf7f2;
+  --el-fill-color-lighter: #fefaf6;
+  --el-fill-color-extra-light: #fffdfa;
+  --el-mask-color: rgba(0, 0, 0, 0.3);
+  --el-box-shadow: 0 4px 16px 0 rgba(140, 100, 70, 0.12);
+  --el-box-shadow-light: 0 2px 8px 0 rgba(140, 100, 70, 0.08);
+  --el-color-primary: #e67e22;
+  --el-color-success: #27ae60;
+  --el-color-warning: #f39c12;
+  --el-color-danger: #e74c3c;
+  --el-color-info: #95a5a6;
+}
+
+/* 深色主题 */
+.dark-mode {
+  --el-bg-color: #141414;
+  --el-text-color-primary: #e5eaf3;
+  --el-text-color-regular: #cfd3dc;
+  --el-text-color-secondary: #a3a6ad;
+  --el-border-color: #4c4d4f;
+  --el-border-color-light: #414243;
+  --el-border-color-lighter: #363637;
+  --el-fill-color: #1d1e1f;
+  --el-fill-color-light: #242424;
+  --el-fill-color-lighter: #2a2a2b;
+  --el-fill-color-extra-light: #303133;
+  --el-mask-color: rgba(0, 0, 0, 0.8);
+  --el-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.6);
+  --el-box-shadow-light: 0 2px 8px 0 rgba(0, 0, 0, 0.6);
+  --el-color-primary: #409eff;
+  --el-color-success: #67c23a;
+  --el-color-warning: #e6a23c;
+  --el-color-danger: #f56c6c;
+  --el-color-info: #909399;
+}
+
+/* 自定义组件深色模式支持 */
+.dark-mode .settings-modal-container {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.dark-mode .modal-header {
+  background: linear-gradient(to right, #111827, #1e293b);
+  border-color: #374151;
+}
+
+.dark-mode .user-info-card {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark-mode .setting-item {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark-mode .setting-item:hover {
+  border-color: #60a5fa;
+  background-color: #3b82f6;
+}
+
+.dark-mode .modal-footer {
+  background-color: #111827;
+  border-color: #374151;
+}
+
+/* 系统跟随模式的基础样式 */
+.system-mode {
+  /* 初始状态跟随系统 */
+}
+
+/* 高对比度模式 */
+.high-contrast-mode {
+  --el-bg-color: #000000;
+  --el-text-color-primary: #ffffff;
+  --el-text-color-regular: #cccccc;
+  --el-text-color-secondary: #999999;
+  --el-border-color: #ffffff;
+  --el-border-color-light: #cccccc;
+  --el-border-color-lighter: #999999;
+  --el-fill-color: #333333;
+  --el-fill-color-light: #444444;
+  --el-fill-color-lighter: #555555;
+  --el-fill-color-extra-light: #666666;
+  --el-mask-color: rgba(255, 255, 255, 0.8);
+  --el-box-shadow: 0 2px 12px 0 rgba(255, 255, 255, 0.6);
+  --el-box-shadow-light: 0 2px 8px 0 rgba(255, 255, 255, 0.6);
+  --el-color-primary: #ffff00;
+  --el-color-success: #00ff00;
+  --el-color-warning: #ffa500;
+  --el-color-danger: #ff0000;
+  --el-color-info: #00ffff;
+}
+
+/* 高对比度模式下的组件样式 */
+.high-contrast-mode .settings-modal-container {
+  background-color: #000000;
+  border-color: #ffffff;
+}
+
+.high-contrast-mode .modal-header {
+  background: linear-gradient(to right, #000000, #333333);
+  border-color: #ffffff;
+}
+
+.high-contrast-mode .user-info-card {
+  background-color: #333333;
+  border-color: #ffffff;
+}
+
+.high-contrast-mode .setting-item {
+  background-color: #333333;
+  border-color: #ffffff;
+}
+
+.high-contrast-mode .setting-item:hover {
+  border-color: #ffff00;
+  background-color: #444444;
+}
+
+.high-contrast-mode .modal-footer {
+  background-color: #000000;
+  border-color: #ffffff;
+}
+
+/* 确保所有元素都继承主题变量 */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 全局主题继承规则 */
+.light-mode,
+.dark-mode,
+.system-mode,
+.high-contrast-mode {
+  * {
+    background-color: inherit;
+    color: #334155;
+    border-color: inherit;
+  }
+}
+
+/* 强制继承规则，确保所有子元素都应用主题 */
+.light-mode *,
+.dark-mode *,
+.system-mode *,
+.high-contrast-mode * {
+  background-color: inherit;
+  color: #1e40af;
+  border-color: inherit;
+}
+
+/* 特殊处理某些需要透明背景的元素 */
+.light-mode img,
+.dark-mode img,
+.system-mode img,
+.high-contrast-mode img,
+.light-mode svg,
+.dark-mode svg,
+.system-mode svg,
+.high-contrast-mode svg {
+  background-color: transparent !important;
+}
+
+/* 确保表单元素继承主题 */
+.light-mode input,
+.dark-mode input,
+.system-mode input,
+.high-contrast-mode input,
+.light-mode textarea,
+.dark-mode textarea,
+.system-mode textarea,
+.high-contrast-mode textarea,
+.light-mode select,
+.dark-mode select,
+.system-mode select,
+.high-contrast-mode select {
+  background-color: var(--el-fill-color-light);
+  color: #334155;
+  border-color: var(--el-border-color);
+}
+
+/* 页面背景色 */
+body {
+  background-color: var(--el-bg-color);
+  color: #1e40af;
+}
+
+/* 全局字体颜色统一为暖色调深棕色 */
+html {
+  color: #4a3528;
+}
+
+/* 确保所有文本元素默认使用暖色调深棕色 */
+p, div, span, li, td, th, label, button, a, h1, h2, h3, h4, h5, h6 {
+  color: #4a3528;
+}
+
+/* 全局深色模式样式 */
+.dark-mode {
+  /* 全局背景色 */
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的通用组件样式 */
+.dark-mode .el-container,
+.dark-mode .el-header,
+.dark-mode .el-main,
+.dark-mode .el-footer,
+.dark-mode .el-aside {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的卡片样式 */
+.dark-mode .el-card {
+  background-color: var(--el-fill-color-light);
+  border-color: var(--el-border-color);
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的菜单样式 */
+.dark-mode .el-menu {
+  background-color: var(--el-bg-color);
+  border-color: var(--el-border-color);
+}
+
+.dark-mode .el-menu-item,
+.dark-mode .el-sub-menu__title {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-menu-item:hover,
+.dark-mode .el-sub-menu__title:hover {
+  background-color: var(--el-fill-color-light);
+}
+
+.dark-mode .el-menu-item.is-active {
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+
+/* 深色模式下的按钮样式 */
+.dark-mode .el-button {
+  background-color: var(--el-fill-color-light);
+  border-color: var(--el-border-color);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-button--primary {
+  background-color: var(--el-color-primary);
+  border-color: var(--el-color-primary);
+  color: white;
+}
+
+/* 深色模式下的输入框样式 */
+.dark-mode .el-input .el-input__wrapper {
+  background-color: var(--el-fill-color-light);
+  border-color: var(--el-border-color);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-input .el-input__inner {
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的表格样式 */
+.dark-mode .el-table {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-table th {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-table tr {
+  background-color: var(--el-bg-color);
+}
+
+.dark-mode .el-table tr:hover {
+  background-color: var(--el-fill-color-light);
+}
+
+/* 深色模式下的对话框样式 */
+.dark-mode .el-dialog {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-dialog__header {
+  border-bottom-color: var(--el-border-color);
+}
+
+.dark-mode .el-dialog__title {
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的标签页样式 */
+.dark-mode .el-tabs {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-tabs__header {
+  border-bottom-color: var(--el-border-color);
+}
+
+.dark-mode .el-tabs__item {
+  color: var(--el-text-color-secondary);
+}
+
+.dark-mode .el-tabs__item.is-active {
+  color: var(--el-color-primary);
+}
+
+.dark-mode .el-tabs__active-bar {
+  background-color: var(--el-color-primary);
+}
+
+/* 深色模式下的消息提示样式 */
+.dark-mode .el-message {
+  background-color: var(--el-fill-color-light);
+  border-color: var(--el-border-color);
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的加载样式 */
+.dark-mode .el-loading-mask {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 深色模式下的自定义组件样式 */
+.dark-mode .chat-container,
+.dark-mode .chat-message,
+.dark-mode .sidebar,
+.dark-mode .header,
+.dark-mode .footer {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .chat-message.user {
+  background-color: var(--el-fill-color-light);
+}
+
+.dark-mode .chat-message.assistant {
+  background-color: var(--el-fill-color-lighter);
+}
+
+/* 思考内容框样式 - 浅色主题（暖色调设计） */
+.light-mode .thinking-chain-warp {
+  /* 思考内容框容器 */
+}
+
+.light-mode .thinking-chain-warp .thinking-container {
+  background: linear-gradient(135deg, #fefaf6 0%, #fdf6f0 100%);
+  border: 1px solid #f5e9dd;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(230, 170, 120, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.light-mode .thinking-chain-warp .thinking-container:hover {
+  box-shadow: 0 4px 24px rgba(230, 170, 120, 0.2);
+  border-color: #f0d9c4;
+  transform: translateY(-2px);
+}
+
+.light-mode .thinking-chain-warp .thinking-header {
+  background: linear-gradient(90deg, #fdf6f0 0%, #f9ede2 100%);
+  border-bottom: 1px solid #f5e9dd;
+  color: #d35400;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 18px 18px 0 0;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+}
+
+.light-mode .thinking-chain-warp .thinking-content {
+  background: #fefaf6;
+  color: #6b4f3a;
+  padding: 24px;
+  border-radius: 0 0 18px 18px;
+  line-height: 1.8;
+  font-size: 15px;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+  font-weight: 400;
+}
+
+.light-mode .thinking-chain-warp .thinking-content pre {
+  background: #f9ede2;
+  border: 1px solid #f0d9c4;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+  font-size: 13px;
+  color: #e67e22;
+  line-height: 1.6;
+  box-shadow: inset 0 1px 3px rgba(140, 100, 70, 0.05);
+}
+
+.light-mode .thinking-chain-warp .thinking-content code {
+  background: #f5e9dd;
+  color: #e67e22;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+  font-weight: 500;
+  border: 1px solid #f0d9c4;
+}
+
+.light-mode .thinking-chain-warp .thinking-content .thinking-highlight {
+  background: linear-gradient(120deg, #fdf6f0 0%, #f9ede2 100%);
+  border-left: 4px solid #f39c12;
+  padding: 20px 24px;
+  margin: 16px 0;
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 2px 10px rgba(243, 156, 18, 0.15);
+}
+
+/* 思考内容框样式 - 深色主题（柔和清新版） */
+.dark-mode .thinking-chain-warp .thinking-container {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+}
+
+.dark-mode .thinking-chain-warp .thinking-container:hover {
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+  transform: translateY(-1px);
+}
+
+.dark-mode .thinking-chain-warp .thinking-header {
+  background: linear-gradient(90deg, #312e81 0%, #4338ca 100%);
+  border-bottom: 1px solid #4338ca;
+  color: #c7d2fe;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 16px 16px 0 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.dark-mode .thinking-chain-warp .thinking-content {
+  background: #1e1b4b;
+  color: #e0e7ff;
+  padding: 20px;
+  border-radius: 0 0 16px 16px;
+  line-height: 1.7;
+  font-size: 14px;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+}
+
+.dark-mode .thinking-chain-warp .thinking-content pre {
+  background: #312e81;
+  border: 1px solid #4338ca;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 10px 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+  font-size: 13px;
+  color: #a5b4fc;
+  line-height: 1.5;
+}
+
+.dark-mode .thinking-chain-warp .thinking-content code {
+  background: #4338ca;
+  color: #c7d2fe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+  font-weight: 500;
+}
+
+.dark-mode .thinking-chain-warp .thinking-content .thinking-highlight {
+  background: linear-gradient(120deg, #1e3a8a 0%, #1e40af 100%);
+  border-left: 4px solid #60a5fa;
+  padding: 16px 20px;
+  margin: 14px 0;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
+}
+
+/* 思考状态指示器 */
+.thinking-chain-warp .thinking-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.light-mode .thinking-chain-warp .thinking-status.thinking {
+  background: #fdf6f0;
+  color: #d35400;
+  border: 1px solid #f5e9dd;
+}
+
+.light-mode .thinking-chain-warp .thinking-status.end {
+  background: #f0fdf4;
+  color: #27ae60;
+  border: 1px solid #bbf7d0;
+}
+
+.dark-mode .thinking-chain-warp .thinking-status.thinking {
+  background: #1e3a8a;
+  color: #93c5fd;
+  border: 1px solid #f0f0f0;
+}
+
+.dark-mode .thinking-chain-warp .thinking-status.end {
+  background: #14532d;
+  color: #86efac;
+  border: 1px solid #f0f0f0;
+}
+
+/* 确保所有子元素继承主题变量 */
+.dark-mode * {
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+/* 深色模式下的通用选择器 */
+.dark-mode [class*="el-"] {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+/* 深色模式下的输入框和下拉框 */
+.dark-mode .el-input__inner,
+.dark-mode .el-textarea__inner,
+.dark-mode .el-select__input,
+.dark-mode .el-select__tags-text {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+/* 深色模式下的下拉菜单 */
+.dark-mode .el-select-dropdown,
+.dark-mode .el-dropdown-menu,
+.dark-mode .el-cascader-menu,
+.dark-mode .el-autocomplete-suggestion {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+.dark-mode .el-select-dropdown__item,
+.dark-mode .el-dropdown-menu__item,
+.dark-mode .el-cascader-node {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-select-dropdown__item:hover,
+.dark-mode .el-dropdown-menu__item:hover,
+.dark-mode .el-cascader-node:hover {
+  background-color: var(--el-fill-color-light);
+}
+
+/* 深色模式下的日期选择器 */
+.dark-mode .el-date-picker,
+.dark-mode .el-time-panel {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+/* 深色模式下的通知和提示 */
+.dark-mode .el-notification,
+.dark-mode .el-message-box {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+/* 深色模式下的分页 */
+.dark-mode .el-pagination {
+  background-color: transparent;
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-pager li {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-pager li:hover {
+  background-color: var(--el-fill-color);
+}
+
+.dark-mode .el-pager li.active {
+  background-color: var(--el-color-primary);
+  color: white;
+}
+
+/* 深色模式下的布局组件 */
+.dark-mode .layout-container,
+.dark-mode .layout-header,
+.dark-mode .layout-main,
+.dark-mode .layout-container-main {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的侧边栏 */
+.dark-mode .el-aside {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-right: 1px solid var(--el-border-color);
+}
+
+/* 深色模式下的头部 */
+.dark-mode .el-header {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-bottom: 1px solid var(--el-border-color);
+}
+
+/* 深色模式下的主要内容区域 */
+.dark-mode .el-main {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+/* 深色模式下的工具提示 */
+.dark-mode .el-tooltip__popper {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border: 1px solid var(--el-border-color);
+}
+
+/* 深色模式下的弹出框 */
+.dark-mode .el-popper {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border: 1px solid var(--el-border-color);
+}
+
+/* 深色模式下的步骤条 */
+.dark-mode .el-steps {
+  background-color: transparent;
+}
+
+.dark-mode .el-step__title {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-step__description {
+  color: var(--el-text-color-secondary);
+}
+
+/* 深色模式下的进度条 */
+.dark-mode .el-progress-bar__outer {
+  background-color: var(--el-fill-color-light);
+}
+
+/* 深色模式下的滑块 */
+.dark-mode .el-slider__runway {
+  background-color: var(--el-fill-color-light);
+}
+
+.dark-mode .el-slider__bar {
+  background-color: var(--el-color-primary);
+}
+
+/* 深色模式下的树形控件 */
+.dark-mode .el-tree {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-tree-node__content {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-tree-node__content:hover {
+  background-color: var(--el-fill-color-light);
+}
+
+/* 深色模式下的上传组件 */
+.dark-mode .el-upload {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+.dark-mode .el-upload-dragger {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+/* 深色模式下的徽章 */
+.dark-mode .el-badge__content {
+  background-color: var(--el-color-danger);
+  color: white;
+}
+
+/* 深色模式下的标签 */
+.dark-mode .el-tag {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+.dark-mode .el-tag--info {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-secondary);
+  border-color: var(--el-border-color-lighter);
+}
+
+/* 深色模式下的面包屑 */
+.dark-mode .el-breadcrumb__item {
+  color: var(--el-text-color-secondary);
+}
+
+.dark-mode .el-breadcrumb__inner {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-breadcrumb__inner a {
+  color: var(--el-text-color-primary);
+}
+
+.dark-mode .el-breadcrumb__inner.is-link {
+  color: var(--el-text-color-primary);
+}
+
+/* 浅色模式下的警告 */
+.dark-mode .el-alert {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+  border-color: var(--el-border-color);
+}
+
+/* 浅色模式下的字体样式 */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.light-mode a {
+  color: #2563eb;
+  transition: color 0.3s ease;
+}
+
+.light-mode a:hover {
+  color: #1d4ed8;
+}
+
+.light-mode strong,
+.light-mode b {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+body {
+  color: #334155;
+}
+
+/* 浅色模式下的Element Plus组件暖色调样式 */
+.light-mode .el-button--primary {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+  transition: all 0.3s ease;
+}
+
+.light-mode .el-button--primary:hover {
+  background: linear-gradient(135deg, #d35400 0%, #ba4a00 100%);
+  box-shadow: 0 6px 16px rgba(230, 126, 34, 0.4);
+  transform: translateY(-1px);
+}
+
+.light-mode .el-button--default {
+  background: linear-gradient(135deg, #fef8f3 0%, #fcf1e8 100%);
+  border: 1px solid #f0e6dc;
+  color: #6b4f3a;
+  transition: all 0.3s ease;
+}
+
+.light-mode .el-button--default:hover {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-color: #cbd5e1;
+  color: #334155;
+  transform: translateY(-1px);
+}
+
+.light-mode .el-input__inner {
+  background-color: #fffdfa;
+  border: 1px solid #f0e6dc;
+  color: #4a3528;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 2px rgba(140, 100, 70, 0.05);
+}
+
+.light-mode .el-input__inner:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1), inset 0 1px 2px rgba(140, 100, 70, 0.05);
+  background-color: #fef8f3;
+}
+
+.light-mode .el-textarea__inner {
+  background-color: #fffdfa;
+  border: 1px solid #f0e6dc;
+  color: #4a3528;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 2px rgba(140, 100, 70, 0.05);
+}
+
+.light-mode .el-textarea__inner:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1), inset 0 1px 2px rgba(140, 100, 70, 0.05);
+  background-color: #fef8f3;
+}
+
+.light-mode .el-menu-item {
+  color: #6b4f3a;
+  border-radius: 12px;
+  margin: 4px 8px;
+  transition: all 0.3s ease;
+  font-weight: 450;
+}
+
+.light-mode .el-menu-item:hover {
+  color: #e67e22;
+  background: linear-gradient(135deg, #fdf6f0 0%, #f9ede2 100%);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.15);
+}
+
+.light-mode .el-menu-item.is-active {
+  color: #e67e22;
+  background: linear-gradient(135deg, #f9ede2 0%, #f5e9dd 100%);
+  font-weight: 500;
+  box-shadow: inset 3px 0 0 #e67e22, 0 4px 12px rgba(230, 126, 34, 0.2);
+}
+
+/* 浅色模式下的卡片样式 */
+.light-mode .el-card {
+  background: linear-gradient(135deg, #fffdfa 0%, #fef8f3 100%);
+  border: 1px solid #f0e6dc;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(140, 100, 70, 0.08);
+  transition: all 0.3s ease;
+}
+
+.light-mode .el-card:hover {
+  box-shadow: 0 12px 32px rgba(140, 100, 70, 0.12);
+  transform: translateY(-2px);
+}
+
+/* 浅色模式下的表格样式 */
+.light-mode .el-table {
+  background-color: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.light-mode .el-table th {
+  background: linear-gradient(135deg, #fef8f3 0%, #fcf1e8 100%);
+  color: #6b4f3a;
+  font-weight: 600;
+  border-bottom: 2px solid #f0e6dc;
+}
+
+.light-mode .el-table td {
+  border-bottom: 1px solid #fcf1e8;
+  color: #4a3528;
+}
+
+.light-mode .el-table tr:hover td {
+  background-color: #fef8f3;
+}
+
+/* 全局主题继承规则 - 确保所有Vue组件都能正确继承主题变量 */
+.light-mode *,
+.dark-mode *,
+.system-mode *,
+.high-contrast-mode *,
+.inverted-mode * {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+}
+
+/* 特殊处理图片和SVG图标 */
+.light-mode img,
+.dark-mode img,
+.system-mode img,
+.high-contrast-mode img,
+.inverted-mode img,
+.light-mode svg,
+.dark-mode svg,
+.system-mode svg,
+.high-contrast-mode svg,
+.inverted-mode svg {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* 确保表单元素正确继承主题 */
+.light-mode input,
+.dark-mode input,
+.system-mode input,
+.high-contrast-mode input,
+.inverted-mode input,
+.light-mode textarea,
+.dark-mode textarea,
+.system-mode textarea,
+.high-contrast-mode textarea,
+.inverted-mode textarea,
+.light-mode select,
+.dark-mode select,
+.system-mode select,
+.high-contrast-mode select,
+.inverted-mode select {
+  background-color: var(--el-fill-color-light) !important;
+  color: var(--el-text-color-primary) !important;
+  border-color: var(--el-border-color) !important;
+}
+
+/* Element Plus 组件主题适配 */
+.el-button {
+  transition: all 0.3s ease;
+}
+
+.el-input {
+  transition: all 0.3s ease;
+}
+
+.el-select {
+  transition: all 0.3s ease;
+}
+
+.el-switch {
+  transition: all 0.3s ease;
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--el-fill-color-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--el-border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--el-text-color-secondary);
+}
+
+/* 深色模式下的滚动条 */
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--el-fill-color-light);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--el-border-color);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--el-text-color-secondary);
+}
+
+/* 浅色模式下的对话框样式 */
+.light-mode .el-dialog {
+  background: linear-gradient(135deg, #fffdfa 0%, #fef8f3 100%);
+  border: 1px solid #f0e6dc;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(140, 100, 70, 0.15);
+}
+
+.light-mode .el-dialog__header {
+  background: linear-gradient(90deg, #fdf6f0 0%, #f9ede2 100%);
+  border-bottom: 1px solid #f5e9dd;
+  color: #d35400;
+  font-weight: 600;
+}
+
+.light-mode .el-dialog__title {
+  color: #d35400;
+}
+
+/* 浅色模式下的标签页样式 */
+.light-mode .el-tabs {
+  color: #4a3528;
+}
+
+.light-mode .el-tabs__header {
+  border-bottom: 1px solid #f0e6dc;
+}
+
+.light-mode .el-tabs__item {
+  color: #6b4f3a;
+}
+
+.light-mode .el-tabs__item.is-active {
+  color: #e67e22;
+}
+
+.light-mode .el-tabs__active-bar {
+  background-color: #e67e22;
+}

@@ -1,0 +1,167 @@
+/* 消息提示层级管理 - 确保所有提示显示在最上层 */
+
+/* Element Plus 消息提示全局层级设置 */
+.el-message {
+  z-index: 99999 !important;
+}
+
+.el-message--success {
+  z-index: 99999 !important;
+}
+
+.el-message--warning {
+  z-index: 99999 !important;
+}
+
+.el-message--error {
+  z-index: 99999 !important;
+}
+
+.el-message--info {
+  z-index: 99999 !important;
+}
+
+/* 消息提示容器层级 */
+.el-message__wrapper {
+  z-index: 99999 !important;
+}
+
+/* 设置组件中的消息提示特殊样式 */
+.settings-message-top {
+  z-index: 999999 !important; /* 比模态框更高的层级 */
+  position: fixed !important;
+  top: 80px !important;
+}
+
+/* 模态框背景遮罩层级调整 */
+.settings-modal-overlay {
+  z-index: 99999 !important;
+}
+
+/* 确保消息提示在模态框之上 */
+.el-message {
+  position: fixed !important;
+  top: 80px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* 深色模式下的消息提示样式增强 */
+.dark-mode .el-message {
+  background-color: var(--el-fill-color-light);
+  border-color: var(--el-border-color);
+  color: var(--el-text-color-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .el-message--success {
+  background-color: #1f2e1f;
+  border-color: #529b2e;
+  color: #67c23a;
+}
+
+.dark-mode .el-message--warning {
+  background-color: #2e261f;
+  border-color: #b8822b;
+  color: #e6a23c;
+}
+
+.dark-mode .el-message--error {
+  background-color: #2e1f1f;
+  border-color: #c45656;
+  color: #f56c6c;
+}
+
+.dark-mode .el-message--info {
+  background-color: #1f262e;
+  border-color: #3375b9;
+  color: #409eff;
+}
+
+/* 浅色模式下的消息提示样式增强 */
+.light-mode .el-message {
+  background-color: #ffffff;
+  border-color: #e1e8ed;
+  color: #2c3e50;
+  box-shadow: 0 4px 16px rgba(140, 100, 70, 0.15);
+}
+
+.light-mode .el-message--success {
+  background-color: #f0f9ff;
+  border-color: #b3d8ff;
+  color: #529b2e;
+}
+
+.light-mode .el-message--warning {
+  background-color: #fffaf0;
+  border-color: #f5deb3;
+  color: #b8822b;
+}
+
+.light-mode .el-message--error {
+  background-color: #fff5f5;
+  border-color: #fabdbd;
+  color: #c45656;
+}
+
+.light-mode .el-message--info {
+  background-color: #f8f9fa;
+  border-color: #d1d9e0;
+  color: #3375b9;
+}
+
+/* 消息提示动画效果 */
+.el-message-fade-enter-active,
+.el-message-fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.el-message-fade-enter-from {
+  opacity: 0;
+  transform: translateY(-20px) translateX(-50%);
+}
+
+.el-message-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px) translateX(-50%);
+}
+
+/* 响应式消息提示位置 */
+@media (max-width: 768px) {
+  .el-message {
+    top: 60px !important;
+    left: 20px !important;
+    right: 20px !important;
+    transform: none !important;
+    max-width: calc(100% - 40px);
+  }
+  
+  .settings-message-top {
+    top: 60px !important;
+  }
+}
+
+/* 特殊场景下的消息提示样式 */
+.el-message--closable {
+  padding-right: 16px;
+}
+
+.el-message__closeBtn {
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.el-message__closeBtn:hover {
+  opacity: 1;
+}
+
+/* 确保消息提示不会被其他元素遮挡 */
+body > .el-message {
+  z-index: 999999 !important;
+}
+
+/* 消息提示容器特殊处理 */
+.el-overlay-message-box {
+  z-index: 999999 !important;
+}
